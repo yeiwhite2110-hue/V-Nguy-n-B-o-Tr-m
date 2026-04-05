@@ -1,111 +1,229 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <title>Ứng dụng AI trong học tập</title>
-    <link rel="stylesheet" href="style.css">
-   
-</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birthday</title>
 
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:radial-gradient(circle,#1a0066,#000);
+font-family:sans-serif;
+overflow:hidden;
+color:white;
+}
+
+/* FLASH */
+
+.flash{
+position:fixed;
+width:100%;
+height:100%;
+background:white;
+opacity:0;
+pointer-events:none;
+}
+
+/* GRID */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(3,120px);
+gap:18px;
+}
+
+/* IMAGE */
+
+.gallery img{
+width:120px;
+height:120px;
+object-fit:cover;
+border-radius:20px;
+border:4px solid #ff4df0;
+box-shadow:0 0 15px #ff4df0;
+transition:0.5s;
+}
+
+/* ACTIVE IMAGE */
+
+.active{
+transform:scale(1.25);
+box-shadow:0 0 30px #ff00ff;
+}
+
+/* TEXT CENTER */
+
+.center{
+position:absolute;
+text-align:center;
+}
+
+/* TITLE */
+
+.title{
+font-size:55px;
+text-shadow:0 0 30px cyan;
+}
+
+/* LETTER */
+
+.card{
+background:#fff8e7;
+color:#333;
+padding:25px;
+border-radius:20px;
+width:320px;
+transform:scale(0);
+box-shadow:0 0 40px pink;
+}
+
+.open{
+animation:open 1s forwards;
+}
+
+@keyframes open{
+to{transform:scale(1)}
+}
+
+</style>
+</head>
 
 <body>
 
-<div class="container">
-<div class="header">
+<div class="flash" id="flash"></div>
 
-    <img src="bia.jpg" alt="Ảnh minh họa AI" class="header-img">
+<audio id="music" src="music.mp3" autoplay muted loop></audio>
 
-    <div class="slogan">
-        Chăm chỉ hôm nay, thành công ngày mai!
-    </div>
+<!-- GRID -->
+
+<div class="gallery" id="gallery">
+
+<img src="img1.jpg">
+<img src="img2.jpg">
+<img src="img3.jpg">
+<img src="img4.jpg">
+<img src="img5.jpg">
+<img src="img6.jpg">
+<img src="img7.jpg">
+<img src="img8.jpg">
+<img src="img9.jpg">
+
 </div>
-   
 
-    <!-- PHẦN 1 -->
-    <div class="section section-1">
-        <div class="image-box">
-            <img src="anh1.jpg" alt="Ứng dụng AI trong học tập">
-        </div>
+<!-- BIRTHDAY -->
 
-        <div class="content-box">
-            <h3>Ứng dụng AI trong học tập</h3>
-            <p>
-                Ứng dụng AI trong học tập giúp học sinh tiếp cận kiến thức nhanh chóng,
-                học tập cá nhân hóa theo năng lực và nhu cầu. AI hỗ trợ tra cứu,
-                ôn luyện và phát triển kỹ năng tự học, tư duy sáng tạo.
-            </p>
-            <p>
-                Việc sử dụng AI đúng cách góp phần nâng cao chất lượng giáo dục
-                trong thời đại chuyển đổi số.
-            </p>
+<div class="center" id="birthday" style="display:none">
+<div class="title">🎉 Happy Birthday 🎉</div>
+<h2>Võ Nguyễn Bảo Trâm</h2>
+<p class="date">16 / 04 / 2010</p>
+</div>
 
-            <a href="trang1.html" class="link-btn">Xem trang 1</a>
-        </div>
-    </div>
+<!-- LETTER -->
 
-    <!-- PHẦN 2 -->
-    <div class="section section-2">
-        <div class="content-box">
-            <h3>Thực hiện đúng định hướng của Đảng và Nhà nước về ứng dụng AI</h3>
-            <p>
-                Thực hiện đúng định hướng của Đảng và Nhà nước về ứng dụng AI
-                là sử dụng công nghệ nhằm phục vụ phát triển giáo dục và xã hội.
-            </p>
-            <p>
-                Việc ứng dụng AI cần tuân thủ pháp luật, đạo đức, bảo vệ dữ liệu cá nhân
-                và không làm thay thế vai trò, trách nhiệm của con người.
-            </p>
-            <p>
-                Qua đó, AI trở thành công cụ hỗ trợ hiệu quả cho quá trình chuyển đổi số
-                và nâng cao chất lượng nguồn nhân lực.
-            </p>
+<div class="center" id="letter" style="display:none">
+<div class="card" id="card">
 
-            <a href="trang2.html" class="link-btn">Xem trang 2</a>
-        </div>
+<h2>Happy Birthday 💖</h2>
 
-        <div class="image-box">
-            <img src="anh2.jpg" alt="Định hướng AI">
-        </div>
-    </div>
+<p>
+Chúc mừng sinh nhật em, Trâm…
 
-    <!-- PHẦN 3 -->
-    <div class="full-box section-3">
-        <h3>Lợi ích của việc ứng dụng AI</h3>
-        <ul>
-            <li>Cá nhân hóa việc học</li>
-            <li>Hỗ trợ tra cứu và ôn tập</li>
-            <li>Tiết kiệm thời gian học tập</li>
-            <li>Phát triển kỹ năng số và tư duy</li>
-            <li>Nâng cao chất lượng giáo dục</li>
-        </ul>
-    </div>
+Có thể anh không phải là người hoàn hảo,
+nhưng từ lúc có em, anh đã cố gắng trở thành phiên bản tốt hơn của chính mình.
 
-    <footer>
-    <div class="footer-top">
-        Lớp: 12A2 | Trường: THPT Duy Tân
-    </div>
+Em đến không ồn ào,
+nhưng lại ở trong tim anh lâu hơn anh từng nghĩ…
 
-    <div class="slogan">
-        "Học tập thông minh – Vươn tới tương lai"
-    </div>
+Anh không biết tương lai sẽ như thế nào,
+chỉ biết rằng hiện tại,
+anh vẫn muốn nắm tay em đi thêm thật lâu nữa…
 
-    <div class="footer-content">
-        <div class="left">
-            Họ và tên: 
-<ol type="1">
-<li>Hồ Thị Na</li>
-<li>Phan Thị Như Ý</li>
-<li>Nguyễn Sinh Sách</li>
-<li>Nguyễn Ngọc Đến</li>
-<li>Phạm Đức Duy Hoàng</li></ol>
-        </div>
+Chúc em luôn bình yên,
+dù sau này người đứng cạnh em có còn là anh hay không…
 
-        <div class="right">
-            Gmail: Nhom8lop12a2@gmail.com <br>
-            Hotline: 0123 456 789
-        </div>
-    </div>
-</footer>
+Nhưng nếu có thể,
+anh vẫn muốn là người ở bên em
+trong tất cả những sinh nhật sau này.🎉
+</p>
+
+</div>
+</div>
+
+<script>
+
+const imgs=document.querySelectorAll(".gallery img");
+const flash=document.getElementById("flash");
+const audio=document.getElementById("music");
+
+let i=0;
+
+/* UNLOCK AUDIO */
+
+document.addEventListener("click",()=>{
+audio.muted=false;
+audio.play();
+},{once:true});
+
+/* FLASH EFFECT */
+
+function beat(){
+
+flash.style.opacity=0.8;
+
+setTimeout(()=>{
+flash.style.opacity=0;
+},120);
+
+}
+
+/* ZOOM LOOP */
+
+function animate(){
+
+imgs.forEach(img=>{
+img.classList.remove("active");
+});
+
+imgs[i].classList.add("active");
+
+beat();
+
+i++;
+
+if(i>=imgs.length){
+
+clearInterval(loop);
+
+setTimeout(()=>{
+gallery.style.display="none";
+birthday.style.display="block";
+beat();
+},1000);
+
+setTimeout(()=>{
+birthday.style.display="none";
+letter.style.display="block";
+card.classList.add("open");
+},4000);
+
+}
+
+}
+
+let loop=setInterval(animate,800);
+
+</script>
 
 </body>
 </html>
